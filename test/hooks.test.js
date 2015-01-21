@@ -151,6 +151,7 @@ describe('hooks', function () {
 
     it('should save actual modifications to database', function (done) {
       User.beforeSave = function (next, data) {
+        console.log('beforeSave');
         data.password = 'hash';
         next();
       };
